@@ -38,7 +38,7 @@
                 <div class="mb-4">
                     <h3 class="section-title">Professional Profile</h3>
                     <p class="description">
-                        Computer Systems Engineer with 2+ years of experience in full-stack web development. 
+                        Computer Systems Engineer with <span id="years"></span> years of experience in full-stack web development. 
                         Passionate about building efficient, scalable solutions and staying current with emerging technologies. 
                         Proven ability to work collaboratively in team environments and deliver high-quality results across diverse projects, from ERP systems to interactive web platforms.
                     </p>
@@ -211,5 +211,15 @@
 
     <!-- Bootstrap JS (opcional para algunos componentes) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onload(() => {
+            var initialDate = 'September 14, 2021';
+            var today = moment(new Date());
+            var pastDate = moment(new Date(initialDate));
+
+            var years = today.diff(pastDate, 'years');
+            document.getElementById("years").innerHTML = years;
+        })
+    </script>
 </body>
 </html>
